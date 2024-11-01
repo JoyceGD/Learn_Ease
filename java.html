@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>Interactive Learning Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 1em 0;
+        }
+
+        nav button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 1em;
+            margin: 0 0.5em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #45a049;
+        }
+
+        section {
+            display: none;
+            padding: 2em;
+            background-color: white;
+            margin: 1em auto;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .active {
+            display: block;
+        }
+
+        .chart-container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 200px;
+            width: 100%;
+            max-width: 400px;
+            margin: 1em auto;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 1em;
+            box-sizing: border-box;
+        }
+
+        .chart-bar {
+            width: 30%;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding-top: 0.5em;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Interactive Learning Page</h1>
+    </header>
+
+    <nav>
+        <button onclick="showSection('learn')">Learn</button>
+        <button onclick="showSection('quiz')">Quiz</button>
+        <button onclick="showSection('assignment')">Assignment</button>
+        <button onclick="showSection('daily-question')">Daily Question</button>
+    </nav>
+
+    <section id="quiz">
+        <h2>Quiz</h2>
+        <div>
+            <p>Question 1: What is the size of int in Java?</p>
+            <label><input type="radio" name="quiz-answer-1" value="4-bytes"> 4 bytes</label>
+            <label><input type="radio" name="quiz-answer-1" value="2-bytes"> 2 bytes</label>
+            <label><input type="radio" name="quiz-answer-1" value="8-bytes"> 8 bytes</label>
+            <label><input type="radio" name="quiz-answer-1" value="16-bytes"> 16 bytes</label>
+        </div>
+        <div>
+            <p>Question 2: Which company developed Java?</p>
+            <label><input type="radio" name="quiz-answer-2" value="sun-microsystems"> Sun Microsystems</label>
+            <label><input type="radio" name="quiz-answer-2" value="oracle"> Oracle</label>
+            <label><input type="radio" name="quiz-answer-2" value="microsoft"> Microsoft</label>
+            <label><input type="radio" name="quiz-answer-2" value="apple"> Apple</label>
+        </div>
+        <div>
+            <p>Question 3: Which keyword is used to create a subclass in Java?</p>
+            <label><input type="radio" name="quiz-answer-3" value="extends"> extends</label>
+            <label><input type="radio" name="quiz-answer-3" value="implements"> implements</label>
+            <label><input type="radio" name="quiz-answer-3" value="inherits"> inherits</label>
+            <label><input type="radio" name="quiz-answer-3" value="subclass"> subclass</label>
+        </div>
+    
+        <div>
+            <p>Question 4: Which method is used to start a thread in Java?</p>
+            <label><input type="radio" name="quiz-answer-4" value="run"> run()</label>
+            <label><input type="radio" name="quiz-answer-4" value="start"> start()</label>
+            <label><input type="radio" name="quiz-answer-4" value="init"> init()</label>
+            <label><input type="radio" name="quiz-answer-4" value="begin"> begin()</label>
+        </div>
+        <div>
+            <p>Question 5: Which of these is not a Java keyword?</p>
+            <label><input type="radio" name="quiz-answer-5" value="class"> class</label>
+            <label><input type="radio" name="quiz-answer-5" value="interface"> interface</label>
+            <label><input type="radio" name="quiz-answer-5" value="extends"> extends</label>
+            <label><input type="radio" name="quiz-answer-5" value="implement"> implement</label>
+        </div>
+        <div>
+            <p>Question 6: What is the default value of a boolean variable in Java?</p>
+            <label><input type="radio" name="quiz-answer-6" value="true"> true</label>
+            <label><input type="radio" name="quiz-answer-6" value="false"> false</label>
+            <label><input type="radio" name="quiz-answer-6" value="0"> 0</label>
+            <label><input type="radio" name="quiz-answer-6" value="null"> null</label>
+        </div>
+        <div>
+            <p>Question 7: Which package is imported by default in a Java program?</p>
+            <label><input type="radio" name="quiz-answer-7" value="java.util"> java.util</label>
+            <label><input type="radio" name="quiz-answer-7" value="java.lang"> java.lang</label>
+            <label><input type="radio" name="quiz-answer-7" value="java.io"> java.io</label>
+            <label><input type="radio" name="quiz-answer-7" value="java.net"> java.net</label>
+        </div>
+        <div>
+            <p>Question 8: Which of these is a valid constructor for class MyClass?</p>
+            <label><input type="radio" name="quiz-answer-8" value="myclass"> myclass()</label>
+            <label><input type="radio" name="quiz-answer-8" value="MyClass"> MyClass()</label>
+            <label><input type="radio" name="quiz-answer-8" value="void MyClass"> void MyClass()</label>
+            <label><input type="radio" name="quiz-answer-8" value="none"> None of the above</label>
+        </div>
+        <div>
+            <p>Question 9: Which of these is not a feature of Java?</p>
+            <label><input type="radio" name="quiz-answer-9" value="object-oriented"> Object-oriented</label>
+            <label><input type="radio" name="quiz-answer-9" value="platform-independent"> Platform-independent</label>
+            <label><input type="radio" name="quiz-answer-9" value="robust"> Robust</label>
+            <label><input type="radio" name="quiz-answer-9" value="pointer-support"> Pointer support</label>
+        </div>
+        <div>
+            <p>Question 10: Which method is used to get the length of an array in Java?</p>
+            <label><input type="radio" name="quiz-answer-10" value="length"> length</label>
+            <label><input type="radio" name="quiz-answer-10" value="size"> size</label>
+            <label><input type="radio" name="quiz-answer-10" value="getSize"> getSize()</label>
+            <label><input type="radio" name="quiz-answer-10" value="getLength"> getLength()</label>
+        </div>
+        
+        <button id="submit-quiz-button" onclick="checkQuizAnswers()">Submit</button>
+        <p id="quiz-feedback"></p>
+        <div id="quiz-chart" class="chart-container">
+            <div id="correct-bar" class="chart-bar" style="height: 0;">0</div>
+            <div id="wrong-bar" class="chart-bar" style="height: 0; background-color: #f44336;">0</div>
+        </div>
+    </section>
+    <section id="learn" class="active" >
+        <h2>References</h2>
+        <br>
+        <ol>
+            <li><a href="https://www.w3schools.com/java/default.asp">W3 resource</a></li>
+            <li><a href="https://youtu.be/GoXwIVyNvX0?si=SUvWoxhCWKNdGo40">Youtube Link</a></li>
+        </ol>
+
+        
+    </section>
+    <section id="assignment">
+        <h2>Assignment</h2>
+        <p>Your assignment: List different types of constructors.</p>
+        <form id="upload-form" onsubmit="event.preventDefault(); uploadFile();">
+            <label for="doc-upload">Upload your .doc file:</label>
+            <input type="file" id="doc-upload" accept=".doc,.docx">
+            <button type="submit">Upload</button>
+        </form>
+        <p id="upload-feedback"></p>
+    </section>
+
+    <section id="daily-question">
+        <h2>Daily Question</h2>
+        <p>What did you learn today?</p>
+        <textarea id="daily-response" placeholder="Your response"></textarea>
+        <button onclick="submitDailyResponse()">Submit</button>
+        <p id="daily-feedback"></p>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function checkQuizAnswers() {
+            const answers = [
+                document.querySelector('input[name="quiz-answer-1"]:checked'),
+                document.querySelector('input[name="quiz-answer-2"]:checked'),
+                document.querySelector('input[name="quiz-answer-3"]:checked'),
+                document.querySelector('input[name="quiz-answer-4"]:checked'),
+                document.querySelector('input[name="quiz-answer-5"]:checked'),
+                document.querySelector('input[name="quiz-answer-6"]:checked'),
+                document.querySelector('input[name="quiz-answer-7"]:checked'),
+                document.querySelector('input[name="quiz-answer-8"]:checked'),
+                document.querySelector('input[name="quiz-answer-9"]:checked'),
+                document.querySelector('input[name="quiz-answer-10"]:checked')
+            ];
+            const correctAnswers = [
+                'database-management-system',
+                'all',
+                'sql',
+                'unique-identifier',
+                'structured-query-language',
+                'link-between-tables',
+                'reducing-redundancy',
+                'unit-of-work',
+                'data-structure',
+                'precompiled-sql'
+            ];
+            let correctCount = 0;
+
+            answers.forEach((answer, index) => {
+                if (answer && answer.value === correctAnswers[index]) {
+                    correctCount++;
+                }
+            });
+
+            const feedback = document.getElementById('quiz-feedback');
+            const wrongCount = correctAnswers.length - correctCount;
+            feedback.textContent = `You got ${correctCount} correct and ${wrongCount} wrong.`;
+            feedback.style.color = correctCount === correctAnswers.length ? 'green' : 'red';
+
+            // Disable all quiz inputs and the submit button
+            document.querySelectorAll('input[name^="quiz-answer"]').forEach(input => {
+                input.disabled = true;
+            });
+            document.getElementById('submit-quiz-button').disabled = true;
+
+            // Display the score graphically
+            const correctBar = document.getElementById('correct-bar');
+            const wrongBar = document.getElementById('wrong-bar');
+
+            correctBar.style.height = `${(correctCount / correctAnswers.length) * 100}%`;
+            correctBar.textContent = correctCount;
+
+            wrongBar.style.height = `${(wrongCount / correctAnswers.length) * 100}%`;
+            wrongBar.textContent = wrongCount;
+
+        }
+
+        function uploadFile() {
+            const fileInput = document.getElementById('doc-upload');
+            const feedback = document.getElementById('upload-feedback');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                feedback.textContent = 'Please select a file to upload.';
+                feedback.style.color = 'red';
+                return;
+            }
+
+            if (file.type !== 'application/msword' && file.type !== 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+                feedback.textContent = 'Only .doc or .docx files are allowed.';
+                feedback.style.color = 'red';
+                return;
+            }
+
+            // Simulate file upload
+            feedback.textContent = 'File uploaded successfully!';
+            feedback.style.color = 'green';
+        }
+
+        function submitDailyResponse() {
+            const response = document.getElementById('daily-response').value.trim();
+            const feedback = document.getElementById('daily-feedback');
+
+            if (!response) {
+                feedback.textContent = 'Please provide your response.';
+                feedback.style.color = 'red';
+            } else {
+                // Simulate response submission
+                feedback.textContent = 'Response submitted successfully!';
+                feedback.style.color = 'green';
+            }
+        }
+       
+    </script>
+
+</body>
+
+</html>

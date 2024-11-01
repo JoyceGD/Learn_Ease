@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>Interactive Learning Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 1em 0;
+        }
+
+        nav button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 1em;
+            margin: 0 0.5em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #45a049;
+        }
+
+        section {
+            display: none;
+            padding: 2em;
+            background-color: white;
+            margin: 1em auto;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .active {
+            display: block;
+        }
+
+        .chart-container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 200px;
+            width: 100%;
+            max-width: 400px;
+            margin: 1em auto;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 1em;
+            box-sizing: border-box;
+        }
+
+        .chart-bar {
+            width: 30%;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding-top: 0.5em;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Interactive Learning Page</h1>
+    </header>
+
+    <nav>
+        <button onclick="showSection('learn')">Learn</button>
+        <button onclick="showSection('quiz')">Quiz</button>
+        <button onclick="showSection('assignment')">Assignment</button>
+        <button onclick="showSection('daily-question')">Daily Question</button>
+    </nav>
+
+    <section id="quiz">
+        <h2>Quiz</h2>
+        <div>
+            <p>Question 1: What does DBMS stand for?</p>
+            <label><input type="radio" name="quiz-answer-1" value="database-management-system"> Database Management
+                System</label>
+            <label><input type="radio" name="quiz-answer-1" value="data-backup-management-system"> Data Backup
+                Management System</label>
+            <label><input type="radio" name="quiz-answer-1" value="data-batch-management-system"> Data Batch Management
+                System</label>
+            <label><input type="radio" name="quiz-answer-1" value="database-batch-management-system"> Database Batch
+                Management System</label>
+        </div>
+        <div>
+            <p>Question 2: Which of the following is a type of DBMS?</p>
+            <label><input type="radio" name="quiz-answer-2" value="hierarchical"> Hierarchical</label>
+            <label><input type="radio" name="quiz-answer-2" value="network"> Network</label>
+            <label><input type="radio" name="quiz-answer-2" value="relational"> Relational</label>
+            <label><input type="radio" name="quiz-answer-2" value="all"> All of the above</label>
+        </div>
+        <div>
+            <p>Question 3: Which language is used to query databases?</p>
+            <label><input type="radio" name="quiz-answer-3" value="sql"> SQL</label>
+            <label><input type="radio" name="quiz-answer-3" value="html"> HTML</label>
+            <label><input type="radio" name="quiz-answer-3" value="css"> CSS</label>
+            <label><input type="radio" name="quiz-answer-3" value="xml"> XML</label>
+        </div>
+        <div>
+            <p>Question 4: What is a primary key in a database?</p>
+            <label><input type="radio" name="quiz-answer-4" value="unique-identifier"> A unique identifier for a
+                record</label>
+            <label><input type="radio" name="quiz-answer-4" value="duplicate-identifier"> A duplicate identifier for a
+                record</label>
+            <label><input type="radio" name="quiz-answer-4" value="secondary-key"> A secondary key for a record</label>
+            <label><input type="radio" name="quiz-answer-4" value="null-key"> A null key for a record</label>
+        </div>
+        <div>
+            <p>Question 5: What does SQL stand for?</p>
+            <label><input type="radio" name="quiz-answer-5" value="structured-query-language"> Structured Query
+                Language</label>
+            <label><input type="radio" name="quiz-answer-5" value="sequential-query-language"> Sequential Query
+                Language</label>
+            <label><input type="radio" name="quiz-answer-5" value="simple-query-language"> Simple Query Language</label>
+            <label><input type="radio" name="quiz-answer-5" value="synchronous-query-language"> Synchronous Query
+                Language</label>
+        </div>
+        <div>
+            <p>Question 6: What is a foreign key in a database?</p>
+            <label><input type="radio" name="quiz-answer-6" value="link-between-tables"> A key used to link two tables
+                together</label>
+            <label><input type="radio" name="quiz-answer-6" value="primary-key"> A primary key in another table</label>
+            <label><input type="radio" name="quiz-answer-6" value="duplicate-key"> A duplicate key</label>
+            <label><input type="radio" name="quiz-answer-6" value="null-key"> A null key</label>
+        </div>
+        <div>
+            <p>Question 7: What is normalization in DBMS?</p>
+            <label><input type="radio" name="quiz-answer-7" value="reducing-redundancy"> The process of reducing
+                redundancy</label>
+            <label><input type="radio" name="quiz-answer-7" value="increasing-redundancy"> The process of increasing
+                redundancy</label>
+            <label><input type="radio" name="quiz-answer-7" value="data-replication"> Data replication</label>
+            <label><input type="radio" name="quiz-answer-7" value="data-encryption"> Data encryption</label>
+        </div>
+        <div>
+            <p>Question 8: What is a transaction in DBMS?</p>
+            <label><input type="radio" name="quiz-answer-8" value="unit-of-work"> A unit of work performed within a
+                database</label>
+            <label><input type="radio" name="quiz-answer-8" value="data-transfer"> Data transfer between
+                databases</label>
+            <label><input type="radio" name="quiz-answer-8" value="backup-operation"> A backup operation</label>
+            <label><input type="radio" name="quiz-answer-8" value="restore-operation"> A restore operation</label>
+        </div>
+        <div>
+            <p>Question 9: What is an index in a database?</p>
+            <label><input type="radio" name="quiz-answer-9" value="data-structure"> A data structure that improves the
+                speed of data retrieval</label>
+            <label><input type="radio" name="quiz-answer-9" value="primary-key"> A primary key</label>
+            <label><input type="radio" name="quiz-answer-9" value="foreign-key"> A foreign key</label>
+            <label><input type="radio" name="quiz-answer-9" value="data-replication"> Data replication</label>
+        </div>
+        <div>
+            <p>Question 10: What is a stored procedure in DBMS?</p>
+            <label><input type="radio" name="quiz-answer-10" value="precompiled-sql"> A precompiled collection of SQL
+                statements</label>
+            <label><input type="radio" name="quiz-answer-10" value="data-transfer"> A data transfer operation</label>
+            <label><input type="radio" name="quiz-answer-10" value="backup-operation"> A backup operation</label>
+            <label><input type="radio" name="quiz-answer-10" value="data-encryption"> Data encryption</label>
+        </div>
+        <button id="submit-quiz-button" onclick="checkQuizAnswers()">Submit</button>
+        <p id="quiz-feedback"></p>
+        <div id="quiz-chart" class="chart-container">
+            <div id="correct-bar" class="chart-bar" style="height: 0;">0</div>
+            <div id="wrong-bar" class="chart-bar" style="height: 0; background-color: #f44336;">0</div>
+        </div>
+    </section>
+    <section id="learn" class="active">
+        <h2>References</h2>
+        <br>
+        <ol>
+            <li><a href="https://www.javatpoint.com/dbms-tutorial">Javatpoint resource</a></li>
+            <li><a href="https://youtu.be/c5HAwKX-suM?si=7DZAEcgcEYqXhQSO">Youtube Link</a></li>
+        </ol>
+    </section>
+    <section id="assignment">
+        <h2>Assignment</h2>
+        <p>Your assignment: Write a short note on SQL joins.</p>
+        <form id="upload-form" onsubmit="event.preventDefault(); uploadFile();">
+            <label for="doc-upload">Upload your .doc file:</label>
+            <input type="file" id="doc-upload" accept=".doc,.docx">
+            <button type="submit">Upload</button>
+        </form>
+        <p id="upload-feedback"></p>
+    </section>
+
+    <section id="daily-question">
+        <h2>Daily Question</h2>
+        <p>What did you learn today?</p>
+        <textarea id="daily-response" placeholder="Your response"></textarea>
+        <button onclick="submitDailyResponse()">Submit</button>
+        <p id="daily-feedback"></p>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function checkQuizAnswers() {
+            const answers = [
+                document.querySelector('input[name="quiz-answer-1"]:checked'),
+                document.querySelector('input[name="quiz-answer-2"]:checked'),
+                document.querySelector('input[name="quiz-answer-3"]:checked'),
+                document.querySelector('input[name="quiz-answer-4"]:checked'),
+                document.querySelector('input[name="quiz-answer-5"]:checked'),
+                document.querySelector('input[name="quiz-answer-6"]:checked'),
+                document.querySelector('input[name="quiz-answer-7"]:checked'),
+                document.querySelector('input[name="quiz-answer-8"]:checked'),
+                document.querySelector('input[name="quiz-answer-9"]:checked'),
+                document.querySelector('input[name="quiz-answer-10"]:checked')
+            ];
+            const correctAnswers = [
+                'database-management-system',
+                'all',
+                'sql',
+                'unique-identifier',
+                'structured-query-language',
+                'link-between-tables',
+                'reducing-redundancy',
+                'unit-of-work',
+                'data-structure',
+                'precompiled-sql'
+            ];
+            let correctCount = 0;
+
+            answers.forEach((answer, index) => {
+                if (answer && answer.value === correctAnswers[index]) {
+                    correctCount++;
+                }
+            });
+
+            const feedback = document.getElementById('quiz-feedback');
+            const wrongCount = correctAnswers.length - correctCount;
+            feedback.textContent = `You got ${correctCount} correct and ${wrongCount} wrong.`;
+            feedback.style.color = correctCount === correctAnswers.length ? 'green' : 'red';
+
+            // Disable all quiz inputs and the submit button
+            document.querySelectorAll('input[name^="quiz-answer"]').forEach(input => {
+                input.disabled = true;
+            });
+            document.getElementById('submit-quiz-button').disabled = true;
+
+            // Display the score graphically
+            const correctBar = document.getElementById('correct-bar');
+            const wrongBar = document.getElementById('wrong-bar');
+
+            correctBar.style.height = `${(correctCount / correctAnswers.length) * 100}%`;
+            correctBar.textContent = correctCount;
+
+            wrongBar.style.height = `${(wrongCount / correctAnswers.length) * 100}%`;
+            wrongBar.textContent = wrongCount;
+
+        }
+
+        function uploadFile() {
+            const fileInput = document.getElementById('doc-upload');
+            const feedback = document.getElementById('upload-feedback');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                feedback.textContent = 'Please select a file to upload.';
+                feedback.style.color = 'red';
+                return;
+            }
+
+            if (file.type !== 'application/msword' && file.type !== 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+                feedback.textContent = 'Only .doc or .docx files are allowed.';
+                feedback.style.color = 'red';
+                return;
+            }
+
+            // Simulate file upload
+            feedback.textContent = 'File uploaded successfully!';
+            feedback.style.color = 'green';
+        }
+
+        function submitDailyResponse() {
+            const response = document.getElementById('daily-response').value.trim();
+            const feedback = document.getElementById('daily-feedback');
+
+            if (!response) {
+                feedback.textContent = 'Please provide your response.';
+                feedback.style.color = 'red';
+            } else {
+                // Simulate response submission
+                feedback.textContent = 'Response submitted successfully!';
+                feedback.style.color = 'green';
+            }
+        }
+        
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="loginpage1.css">
+    <title>Login - LEARN EASE</title>
+    <script>
+        function validateForm() {
+            var username = document.forms["loginForm"]["username"].value;
+            var password = document.forms["loginForm"]["pswrd"].value;
+            var storedUser = JSON.parse(localStorage.getItem('registeredUser'));
+            
+            if (username == "" || password == "") {
+                alert("Please fill in all fields.");
+                return false;
+            }
+
+            if (storedUser && storedUser.username === username && storedUser.password === password) {
+                localStorage.setItem('isLoggedIn', 'true');
+                return true;
+            } else {
+                alert('Invalid username or password.');
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+    <br><br>
+    <h1>LEARN EASE</h1><br><br>
+    <form name="loginForm" action="courses4.html" onsubmit="return validateForm()">
+        <div class="headingsContainer">
+            <h3>Sign in</h3>
+        </div>
+        <div class="mainContainer">
+            <label for="username">Your username</label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+            <br><br>
+            <label for="pswrd">Your password</label>
+            <input type="password" placeholder="Enter Password" name="pswrd" required>
+
+            <div class="subcontainer">
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                <p class="forgotpsd"> <a href="#">Forgot Password?</a></p>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit">Login</button>
+        </div>
+    </form>
+    <!-- Sign up link -->
+    <p class="register">Not a member?  <a href="signup4.html">Register here!</a></p>
+</body>
+</html>

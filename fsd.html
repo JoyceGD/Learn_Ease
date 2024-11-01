@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <title>Interactive Learning Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin: 1em 0;
+        }
+
+        nav button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 1em;
+            margin: 0 0.5em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #45a049;
+        }
+
+        section {
+            display: none;
+            padding: 2em;
+            background-color: white;
+            margin: 1em auto;
+            width: 90%;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .active {
+            display: block;
+        }
+
+        .chart-container {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            height: 200px;
+            width: 100%;
+            max-width: 400px;
+            margin: 1em auto;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 1em;
+            box-sizing: border-box;
+        }
+
+        .chart-bar {
+            width: 30%;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding-top: 0.5em;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Interactive Learning Page</h1>
+    </header>
+
+    <nav>
+        <button onclick="showSection('learn')">Learn</button>
+        <button onclick="showSection('quiz')">Quiz</button>
+        <button onclick="showSection('assignment')">Assignment</button>
+        <button onclick="showSection('daily-question')">Daily Question</button>
+    </nav>
+
+    <section id="quiz">
+        <h2>Quiz</h2>
+        <div>
+            <p>Question 1: What does HTML stand for?</p>
+            <label><input type="radio" name="quiz-answer-1" value="hypertext-markup-language"> HyperText Markup
+                Language</label>
+            <label><input type="radio" name="quiz-answer-1" value="home-tool-markup-language"> Home Tool Markup
+                Language</label>
+            <label><input type="radio" name="quiz-answer-1" value="hyperlinks-and-text-markup-language"> Hyperlinks and
+                Text Markup Language</label>
+        </div>
+        <div>
+            <p>Question 2: Which of the following is a JavaScript framework?</p>
+            <label><input type="radio" name="quiz-answer-2" value="django"> Django</label>
+            <label><input type="radio" name="quiz-answer-2" value="laravel"> Laravel</label>
+            <label><input type="radio" name="quiz-answer-2" value="react"> React</label>
+        </div>
+        <div>
+            <p>Question 3: What is the purpose of CSS in web development?</p>
+            <label><input type="radio" name="quiz-answer-3" value="structure"> To define the structure of web
+                pages</label>
+            <label><input type="radio" name="quiz-answer-3" value="style"> To style and layout web pages</label>
+            <label><input type="radio" name="quiz-answer-3" value="database"> To manage database operations</label>
+        </div>
+        <div>
+            <p>Question 4: What is Node.js primarily used for?</p>
+            <label><input type="radio" name="quiz-answer-4" value="frontend"> Frontend development</label>
+            <label><input type="radio" name="quiz-answer-4" value="backend"> Backend development</label>
+            <label><input type="radio" name="quiz-answer-4" value="database"> Database management</label>
+        </div>
+        <div>
+            <p>Question 5: Which of the following is a NoSQL database?</p>
+            <label><input type="radio" name="quiz-answer-5" value="mysql"> MySQL</label>
+            <label><input type="radio" name="quiz-answer-5" value="postgresql"> PostgreSQL</label>
+            <label><input type="radio" name="quiz-answer-5" value="mongodb"> MongoDB</label>
+        </div>
+        <div>
+            <p>Question 6: What is REST in terms of web services?</p>
+            <label><input type="radio" name="quiz-answer-6" value="representation-state-transfer"> Representational
+                State Transfer</label>
+            <label><input type="radio" name="quiz-answer-6" value="remote-state-transfer"> Remote State Transfer</label>
+            <label><input type="radio" name="quiz-answer-6" value="random-state-transfer"> Random State Transfer</label>
+        </div>
+        <div>
+            <p>Question 7: Which HTTP method is used to update data on a server?</p>
+            <label><input type="radio" name="quiz-answer-7" value="get"> GET</label>
+            <label><input type="radio" name="quiz-answer-7" value="post"> POST</label>
+            <label><input type="radio" name="quiz-answer-7" value="put"> PUT</label>
+        </div>
+        <div>
+            <p>Question 8: What is the role of a web server?</p>
+            <label><input type="radio" name="quiz-answer-8" value="store-data"> To store data</label>
+            <label><input type="radio" name="quiz-answer-8" value="deliver-web-pages"> To deliver web pages to
+                clients</label>
+            <label><input type="radio" name="quiz-answer-8" value="develop-apps"> To develop applications</label>
+        </div>
+        <div>
+            <p>Question 9: What is an API?</p>
+            <label><input type="radio" name="quiz-answer-9" value="application-programming-interface"> Application
+                Programming Interface</label>
+            <label><input type="radio" name="quiz-answer-9" value="application-process-interface"> Application Process
+                Interface</label>
+            <label><input type="radio" name="quiz-answer-9" value="advanced-programming-interface"> Advanced Programming
+                Interface</label>
+        </div>
+        <div>
+            <p>Question 10: Which of the following is a version control system?</p>
+            <label><input type="radio" name="quiz-answer-10" value="docker"> Docker</label>
+            <label><input type="radio" name="quiz-answer-10" value="github"> GitHub</label>
+            <label><input type="radio" name="quiz-answer-10" value="git"> Git</label>
+        </div>
+        <button id="submit-quiz-button" onclick="checkQuizAnswers()">Submit</button>
+        <p id="quiz-feedback"></p>
+        <div id="quiz-chart" class="chart-container">
+            <div id="correct-bar" class="chart-bar" style="height: 0;">0</div>
+            <div id="wrong-bar" class="chart-bar" style="height: 0; background-color: #f44336;">0</div>
+        </div>
+    </section>
+    <section id="learn" class="active">
+        <h2>References</h2>
+        <br>
+        <ol>
+            <li><a href="https://www.w3schools.com/whatis/">W3 resource</a></li>
+            <li><a href="https://youtu.be/nu_pCVPKzTk?si=UuAAt8dAE3I1Yx6D">Youtube Link</a></li>
+        </ol>
+        
+        
+    </section>
+
+    <section id="assignment">
+        <h2>Assignment</h2>
+        <p>Your assignment: Write about HTML and CSS.</p>
+        <form id="upload-form" onsubmit="event.preventDefault(); uploadFile();">
+            <label for="doc-upload">Upload your .doc file:</label>
+            <input type="file" id="doc-upload" accept=".doc,.docx">
+            <button type="submit">Upload</button>
+        </form>
+        <p id="upload-feedback"></p>
+    </section>
+
+    <section id="daily-question">
+        <h2>Daily Question</h2>
+        <p>What did you learn today?</p>
+        <textarea id="daily-response" placeholder="Your response"></textarea>
+        <button onclick="submitDailyResponse()">Submit</button>
+        <p id="daily-feedback"></p>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        function checkQuizAnswers() {
+            const answers = [
+                document.querySelector('input[name="quiz-answer-1"]:checked'),
+                document.querySelector('input[name="quiz-answer-2"]:checked'),
+                document.querySelector('input[name="quiz-answer-3"]:checked'),
+                document.querySelector('input[name="quiz-answer-4"]:checked'),
+                document.querySelector('input[name="quiz-answer-5"]:checked'),
+                document.querySelector('input[name="quiz-answer-6"]:checked'),
+                document.querySelector('input[name="quiz-answer-7"]:checked'),
+                document.querySelector('input[name="quiz-answer-8"]:checked'),
+                document.querySelector('input[name="quiz-answer-9"]:checked'),
+                document.querySelector('input[name="quiz-answer-10"]:checked')
+            ];
+            const correctAnswers = [
+                'hypertext-markup-language',
+                'react',
+                'style',
+                'backend',
+                'mongodb',
+                'representation-state-transfer',
+                'put',
+                'deliver-web-pages',
+                'application-programming-interface',
+                'git'
+            ];
+            let correctCount = 0;
+
+            answers.forEach((answer, index) => {
+                if (answer && answer.value === correctAnswers[index]) {
+                    correctCount++;
+                }
+            });
+
+            const feedback = document.getElementById('quiz-feedback');
+            const wrongCount = correctAnswers.length - correctCount;
+            feedback.textContent = `You got ${correctCount} correct and ${wrongCount} wrong.`;
+            feedback.style.color = correctCount === correctAnswers.length ? 'green' : 'red';
+
+
+            // Disable all quiz inputs and the submit button
+            document.querySelectorAll('input[name^="quiz-answer"]').forEach(input => {
+                input.disabled = true;
+            });
+            document.getElementById('submit-quiz-button').disabled = true;
+
+            // Display the score graphically
+            const correctBar = document.getElementById('correct-bar');
+            const wrongBar = document.getElementById('wrong-bar');
+            correctBar.style.height = `${(correctCount / correctAnswers.length) * 100}%`;
+            correctBar.style.height = `${(correctCount / correctAnswers.length) * 100}%`;
+            correctBar.textContent = correctCount;
+            wrongBar.style.height = `${(wrongCount / correctAnswers.length) * 100}%`;
+            wrongBar.textContent = wrongCount;
+        }
+        function uploadFile() {
+            const fileInput = document.getElementById('doc-upload');
+            const feedback = document.getElementById('upload-feedback');
+            const file = fileInput.files[0];
+
+            if (!file) {
+                feedback.textContent = 'Please select a file to upload.';
+                feedback.style.color = 'red';
+                return;
+            }
+
+            if (file.type !== 'application/msword' && file.type !== 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+                feedback.textContent = 'Only .doc or .docx files are allowed.';
+                feedback.style.color = 'red';
+                return;
+            }
+
+            // Simulate file upload
+            feedback.textContent = 'File uploaded successfully!';
+            feedback.style.color = 'green';
+        }
+
+        function submitDailyResponse() {
+            const response = document.getElementById('daily-response').value.trim();
+            const feedback = document.getElementById('daily-feedback');
+
+            if (!response) {
+                feedback.textContent = 'Please provide your response.';
+                feedback.style.color = 'red';
+            } else {
+                // Simulate response submission
+                feedback.textContent = 'Response submitted successfully!';
+                feedback.style.color = 'green';
+            }
+        }
+       
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - LEARN EASE</title>
+    <link rel="stylesheet" href="loginpage1.css">
+    <style>
+        /* CSS styling for registration page */
+        body {
+            font-family: Arial, sans-serif;
+            background: -webkit-linear-gradient(to right, #191599, #158a99);  
+            background: linear-gradient(to right, #191599, #158a99); 
+        }
+        .container {
+            width: 400px;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        h1 {
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: lightseagreen;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <br><br>
+    <h1>LEARN EASE</h1><br><br>
+    <form id="registerForm" name="registerForm">
+        <div class="headingsContainer">
+            <h3>Register</h3>
+        </div>
+        <div class="mainContainer">
+            <label for="username">Your username</label>
+            <input type="text" id="username" placeholder="Enter Username" name="username" required>
+            <p id="usernameError" class="error"></p>
+            <br><br>
+            <label for="password">Your password</label>
+            <input type="password" id="password" placeholder="Enter Password" name="pswrd" required>
+            <p id="passwordError" class="error"></p>
+            <br><br>
+            <button type="submit">Register</button>
+        </div>
+    </form>
+    <center><p>Already have an account? <a href="loginpage4.html">Login here</a></p></center> 
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const usernameError = document.getElementById('usernameError');
+            const passwordError = document.getElementById('passwordError');
+
+            // Reset error messages
+            usernameError.textContent = '';
+            passwordError.textContent = '';
+
+            let isValid = true;
+
+            // Validate username (at least 5 characters)
+            if (username.length < 5) {
+                usernameError.textContent = 'Username must be at least 5 characters long.';
+                isValid = false;
+            }
+
+            // Validate password (8 characters, 1 uppercase, 1 lowercase, 1 digit, 1 special character)
+            const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W).{8,}$/;
+            if (!passwordRegex.test(password)) {
+                passwordError.textContent = 'Password must be at least 8 characters, include an uppercase letter, a lowercase letter, a number, and a special character.';
+                isValid = false;
+            }
+
+            if (isValid) {
+                localStorage.setItem('registeredUser', JSON.stringify({ username, password }));
+                alert('Registration successful!');
+                window.location.href = 'loginpage4.html';
+            }
+        });
+    </script>
+</body>
+</html>
